@@ -1,5 +1,5 @@
 /* =========================================================
-   Tidal Wave Group — interactions
+   Tidal Wave Group | interactions
    ========================================================= */
 (function () {
   "use strict";
@@ -87,13 +87,13 @@
   /* Contact form.
      RECOMMENDED: set FORM_ENDPOINT to a form service (Formspree / Formcarry /
      Netlify Forms) pointed at the info inbox. The address then lives only in
-     that service's config, never in this site — best protection against spam
+     that service's config, never in this site, the best protection against spam
      scrapers. Until an endpoint is set, the form uses a mailto fallback whose
      address is assembled at runtime (below) so it is not a plain-text string in
      the page source that bots can harvest. */
   var FORM_ENDPOINT = ""; // e.g. "https://formspree.io/f/xxxxxxx"
 
-  // Inbox assembled at runtime — intentionally never a literal address in source.
+  // Inbox assembled at runtime, intentionally never a literal address in source.
   function inbox() {
     return "info" + String.fromCharCode(64) + "tidalwavegroup" + String.fromCharCode(46) + "co";
   }
@@ -116,7 +116,7 @@
 
       function showOk() {
         status.className = "form__status ok show";
-        status.textContent = "Thanks, " + (data.name || "there") + "! Your message is on its way — we'll be in touch within one business day.";
+        status.textContent = "Thanks, " + (data.name || "there") + "! Your message is on its way. We'll be in touch within one business day.";
         form.reset();
       }
 
