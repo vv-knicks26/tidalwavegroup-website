@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" role="img" aria-label="Tidal Wave Group logo">
+  <defs>
+    <clipPath id="lw-clip"><rect x="10" y="16" width="64" height="64" rx="17"/></clipPath>
+  </defs>
+
+  <!-- Mark (white outline badge for dark backgrounds) -->
+  <rect x="10" y="16" width="64" height="64" rx="17" fill="rgba(255,255,255,0.08)" stroke="#67E8F9" stroke-width="1.5"/>
+  <g clip-path="url(#lw-clip)">
+    <path d="M4 46 C 18 38, 28 54, 42 46 C 56 38, 64 54, 80 45 L80 84 L4 84 Z" fill="#22D3EE" opacity="0.30"/>
+    <path d="M4 54 C 19 46, 29 62, 43 54 C 57 46, 65 62, 80 53 L80 84 L4 84 Z" fill="#22D3EE" opacity="0.55"/>
+    <path d="M4 62 C 18 54, 30 70, 44 62 C 56 55, 66 70, 80 61 L80 84 L4 84 Z" fill="#67E8F9"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="90" y="52" font-family="Poppins, 'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="27" fill="#FFFFFF" letter-spacing="-0.5">TIDAL WAVE</text>
+  <text x="91" y="72" font-family="Poppins, 'Segoe UI', system-ui, sans-serif" font-weight="600" font-size="12.5" fill="#67E8F9" letter-spacing="7">G R O U P</text>
+</svg>

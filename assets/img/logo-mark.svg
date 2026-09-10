@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Tidal Wave Group">
+  <defs>
+    <linearGradient id="twg-badge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="0.55" stop-color="#0891B2"/>
+      <stop offset="1" stop-color="#0A2540"/>
+    </linearGradient>
+    <clipPath id="twg-clip">
+      <rect x="2" y="2" width="60" height="60" rx="16"/>
+    </clipPath>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#twg-badge)"/>
+  <g clip-path="url(#twg-clip)">
+    <!-- back swell -->
+    <path d="M-6 34 C 8 26, 18 42, 32 34 C 46 26, 54 42, 70 33 L70 70 L-6 70 Z"
+          fill="#ffffff" opacity="0.22"/>
+    <!-- mid swell -->
+    <path d="M-6 42 C 9 34, 19 50, 33 42 C 47 34, 55 50, 70 41 L70 70 L-6 70 Z"
+          fill="#ffffff" opacity="0.45"/>
+    <!-- front crest -->
+    <path d="M-6 50 C 8 42, 20 58, 34 50 C 46 43, 56 58, 70 49 L70 70 L-6 70 Z"
+          fill="#ffffff"/>
+  </g>
+</svg>
