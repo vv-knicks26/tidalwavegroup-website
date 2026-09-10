@@ -84,9 +84,19 @@
     });
   });
 
-  /* Contact form — front-end handling with mailto fallback.
-     Connect a backend (Formspree / Netlify Forms) by setting FORM_ENDPOINT. */
+  /* Contact form.
+     RECOMMENDED: set FORM_ENDPOINT to a form service (Formspree / Formcarry /
+     Netlify Forms) pointed at the info inbox. The address then lives only in
+     that service's config, never in this site — best protection against spam
+     scrapers. Until an endpoint is set, the form uses a mailto fallback whose
+     address is assembled at runtime (below) so it is not a plain-text string in
+     the page source that bots can harvest. */
   var FORM_ENDPOINT = ""; // e.g. "https://formspree.io/f/xxxxxxx"
+
+  // Inbox assembled at runtime — intentionally never a literal address in source.
+  function inbox() {
+    return "info" + String.fromCharCode(64) + "tidalwavegroup" + String.fromCharCode(46) + "co";
+  }
   var form = document.getElementById("contactForm");
   var status = document.getElementById("formStatus");
 
@@ -138,6 +148,6 @@
       "Service: " + d.service + "\n\n" +
       d.message
     );
-    window.location.href = "mailto:hello@tidalwavegroup.co?subject=" + subject + "&body=" + body;
+    window.location.href = "mailto:" + inbox() + "?subject=" + subject + "&body=" + body;
   }
 })();

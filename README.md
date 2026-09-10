@@ -68,24 +68,38 @@ host — just point it at the repo root.
 
 ## Contact form
 
-The form (`assets/js/main.js`) works out of the box using a **`mailto:`
-fallback** that opens the visitor's email client pre-filled to
-`hello@tidalwavegroup.co`.
+Submissions are routed to **info@tidalwavegroup.co** — but that address is
+never printed anywhere on the site (no `mailto:` text links, no footer
+address), to keep it away from spam scrapers.
 
-To capture submissions server-side without any backend, set `FORM_ENDPOINT`
-near the top of `main.js` to a form service URL, e.g.:
+Two ways it can deliver, in order of preference:
 
-```js
-var FORM_ENDPOINT = "https://formspree.io/f/xxxxxxx"; // Formspree, Formcarry, etc.
-```
+1. **Recommended — a form service.** Set `FORM_ENDPOINT` near the top of
+   `assets/js/main.js` to a form endpoint (Formspree, Formcarry, Netlify
+   Forms, etc.). Point *that service* at info@tidalwavegroup.co. The inbox
+   then lives only in the service's config — nothing email-related ships in
+   the site at all.
+
+   ```js
+   var FORM_ENDPOINT = "https://formspree.io/f/xxxxxxx";
+   ```
+
+2. **Fallback (no backend).** If `FORM_ENDPOINT` is left blank, the form
+   opens the visitor's own email client pre-addressed to the inbox. That
+   address is **assembled at runtime from fragments** in `main.js` (never a
+   literal string), so it isn't sitting in the source for bots to harvest.
+
+Either way, no email address is visible on the rendered page.
 
 ## ⚠️ Placeholder content to review before launch
 
 This is a complete, launch-ready template, but a few items use representative
 sample content. Please confirm/replace:
 
-- **Email address** — `hello@tidalwavegroup.co` is assumed. Update it in
-  `index.html` and `main.js` if you use a different inbox.
+- **Contact inbox** — the form routes to `info@tidalwavegroup.co` (not shown
+  on the page). To use a different inbox, update the fragments in the
+  `inbox()` function in `main.js`, or better, set `FORM_ENDPOINT` to a form
+  service pointed at your address (see "Contact form" above).
 - **Stats / metrics** — the numbers in the "By The Numbers" section and the
   hero dashboard (ROAS, traffic lift, campaigns, retention) are illustrative
   samples. Swap in your real figures.
@@ -93,8 +107,6 @@ sample content. Please confirm/replace:
   with real, approved client testimonials before publishing.
 - **Platform logos** — the "channels & platforms" strip lists common tools;
   edit to match what you actually use.
-- **Social links** — footer social icons currently point to `#`; add your real
-  profile URLs.
 - **Business hours** — listed as Mon–Fri, 9am–6pm ET; adjust if needed.
 
 ## Business details
